@@ -1,0 +1,1 @@
+export const RECEIVE_BRANDS ="RECEIVE_BRANDS";
