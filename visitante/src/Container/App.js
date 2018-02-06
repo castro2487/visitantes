@@ -12,12 +12,12 @@ import {loadCountries} from "../Container/Actions";
 class App extends Component {
   
   componentDidMount() {
-    this.props.loadCountries(()=>{console.log('se cargaron los paises');});
+      this.props.loadCountries(()=>{console.log('se cargaron los paises');});
   };
 
   render() {
-    const paises = this.props.brands.map(brand => brand.brand);
-    console.log(paises);
+    const countries = this.props.countries.map(name => name.name);
+    console.log(countries);
     return (
       <div className="App">
         <header className="App-header">
@@ -29,10 +29,10 @@ class App extends Component {
         </p>
         <form>
           <Field
-            name="brand"
+            name="country"
             selected="Seleccione un Pais"
             component={RenderSelectField}
-            items={paises}
+            items={countries}
             onChange={(event, newValue, previousValue) => this.changeBrandHandler(event, newValue, previousValue)}
           />
         </form>
@@ -44,7 +44,7 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
       carForm: state.form.carForm,
-      brands: state.quote.brands,
+      countries: state.visitor.countries,
   };
 };
 

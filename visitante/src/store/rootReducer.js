@@ -3,26 +3,26 @@ import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 
 const initialState = {
-    car: {
-        brand: '',
+    country: {
+        name: "",
     },
-    brands:[],
+    countries:[],
  
 };
 
-const quoteReducer = (state = initialState, action) => {
+const visitorReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.RECEIVE_COUNTRIES:
-            const newBrands = [...action.brandsData.data];
-            console.log(newBrands);
-            return{...state, brands: newBrands};
+            const newCountries = [...action.countriesData.data];
+            console.log(newCountries);
+            return{...state, countries: newCountries};
             default:
             return state;
     }
 };
 
 const rootReducer = combineReducers({
-    quote: quoteReducer,
+    visitor: visitorReducer,
     form: formReducer
 });
 export default rootReducer;
