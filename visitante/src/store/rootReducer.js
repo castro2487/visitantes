@@ -12,8 +12,9 @@ const initialState = {
 
 const quoteReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.RECEIVE_BRANDS:
+        case actionTypes.RECEIVE_COUNTRIES:
             const newBrands = [...action.brandsData.data];
+            console.log(newBrands);
             return{...state, brands: newBrands};
             default:
             return state;

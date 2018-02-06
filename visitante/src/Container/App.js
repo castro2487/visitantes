@@ -5,18 +5,19 @@ import { RenderSelectField } from "../Container/Global/RenderSelectField";
 import logo from '../logo.svg';
 import '../Container/App.css';
 
-import {loadBrands} from "../Container/Actions";
+import {loadCountries} from "../Container/Actions";
 
 
 
 class App extends Component {
   
   componentDidMount() {
-    this.props.loadBrands(()=>{console.log('se cargaron las marcas');});
+    this.props.loadCountries(()=>{console.log('se cargaron los paises');});
   };
 
   render() {
-    const brands = this.props.brands.map(brand => brand.brand);
+    const paises = this.props.brands.map(brand => brand.brand);
+    console.log(paises);
     return (
       <div className="App">
         <header className="App-header">
@@ -29,9 +30,9 @@ class App extends Component {
         <form>
           <Field
             name="brand"
-            selected="Marca del auto"
+            selected="Seleccione un Pais"
             component={RenderSelectField}
-            items={brands}
+            items={paises}
             onChange={(event, newValue, previousValue) => this.changeBrandHandler(event, newValue, previousValue)}
           />
         </form>
@@ -48,6 +49,6 @@ const mapStateToProps = state => {
 };
 
 export default reduxForm({
-  form: "carForm"
-})(connect(mapStateToProps, { loadBrands})(App));
+  form: "countriesForm"
+})(connect(mapStateToProps, { loadCountries})(App));
 

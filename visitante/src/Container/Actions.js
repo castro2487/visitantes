@@ -1,11 +1,11 @@
 import axiosClient from "../Container/endpoint";
 import * as actionTypes from "../store/actions";
 
-const loadBrands = (callback) =>{
+const loadCountries = (callback) =>{
     return dispatch => {
-        axiosClient.get('/car/brand')
+        axiosClient.get('/all?fields=name')
             .then(response => {
-                dispatch({type: actionTypes.RECEIVE_BRANDS, brandsData: {...response}});
+                dispatch({type: actionTypes.RECEIVE_COUNTRIES, brandsData: {...response}});
                 callback();
             })
             .catch(function (error) {
@@ -14,4 +14,4 @@ const loadBrands = (callback) =>{
     };
 }
 
-export {loadBrands};
+export {loadCountries};
