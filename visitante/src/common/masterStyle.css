@@ -1,0 +1,29 @@
+html {
+    height: 100%; }
+  
+  body {
+    background: #eeeeee;
+    /* Old browsers */
+    height: 100%; }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 200; }
+  
+  h1 {
+    line-height: 50px; }
+    h1 span {
+      font-size: 30px;
+      display: block; }
+  
+  form {
+    margin-top: 30px; }
+    form select.browser-default {
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #cccccc;
+      border-radius: 2px;
+      height: 3rem;
+      opacity: 1;
+      pointer-events: auto;
+      position: initial; }
